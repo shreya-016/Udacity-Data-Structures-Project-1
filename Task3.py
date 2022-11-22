@@ -52,7 +52,9 @@ for call in calls:
     number = call[0][:5]
     if number == "(080)":
         bangaloreCalls.add(call[1])
-listOfCodes = sorted(list(bangaloreCalls))
+areaCodes = [phone[:phone.find(')') + 1].replace('(', '').replace(')', '') if ')' in phone else phone[0:4] for phone in
+              bangaloreCalls]
+listOfCodes = sorted(list(areaCodes))
 
 print("The numbers called by people in Bangalore have codes:")
 print(*listOfCodes, sep = "\n")
@@ -75,7 +77,7 @@ for call in calls:
         if call[1][:5] == "(080)":
             toBanglore += 1
 
-print("\n {} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(round(toBanglore)/(fromBanglore)*100),2)
+print("\n {} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(round((toBanglore/fromBanglore)*100,2)))
 
 """
 TIME COMPLEXCITY
