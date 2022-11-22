@@ -40,7 +40,8 @@ for num in texts:
 
 result = sorted(TeleNum - nonTeleNum)
 print("These numbers could be TeleNums:")
-print(result)
+for r in result:
+    print(r)
 
 """
 TIME COMPLEXCITY
