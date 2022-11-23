@@ -54,7 +54,7 @@ for call in calls:
         bangaloreCalls.add(call[1])
 areaCodes = [phone[:phone.find(')') + 1].replace('(', '').replace(')', '') if ')' in phone else phone[0:4] for phone in
               bangaloreCalls]
-listOfCodes = sorted(list(areaCodes))
+listOfCodes = sorted(set(list(areaCodes)))
 
 print("The numbers called by people in Bangalore have codes:")
 print(*listOfCodes, sep = "\n")
